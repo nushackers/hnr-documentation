@@ -74,13 +74,15 @@ Then, setup the backend.
     export $(cat .env | xargs)
     ```
 
-3. Start the backend
+3. Edit the `launchSettings.json`'s `DATABASE_URL` field to have the same value as the one supplied in the `.env` file
+
+4. Start the backend
 
     ```bash
     dotnet run
     ```
 
-The backend will run on `http://localhost:5134` by default. To change this, modify the `launchSettings.json` file under the `applicationUrl` property.
+The backend will run on [localhost:5134](localhost:5134) by default. To change this, modify the `launchSettings.json` file under the `applicationUrl` property.
 {: .note}
 
 Finally, setup the frontend.
@@ -116,7 +118,7 @@ Finally, setup the frontend.
     The values of `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_FLAGS_URL` should both be blank as well.
     {: .note}
 
-6. Start the development server
+6. Start the frontend
 
     ```bash
     yarn dev
@@ -125,4 +127,4 @@ Finally, setup the frontend.
     `yarn dev` must be used to set `NODE_ENV` to `development`. Otherwise, the frontend will try using production values instead.
     {: .warning}
 
-Lastly, validate the setup by visiting `localhost:3000/register` and attempting to create a new account. If all goes well, you should be able to view the newly created account in Firebase and a new database entry should be found under the `"Users"` table of the database.
+Lastly, validate the setup by visiting [localhost:3000/register](localhost:3000/register) and attempting to create a new account. If all goes well, you should be able to view the newly created account in Firebase and a new database entry should be found under the `"Users"` table of the database after you fill in your details for setting up.
