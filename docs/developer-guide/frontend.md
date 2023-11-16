@@ -3,52 +3,29 @@ layout: default
 title: Frontend
 permalink: /developer-guide/frontend/
 parent: Developer Guide
-nav_order: 1
+nav_order: 4
 ---
 
-Steps apply for locally run setup, for deployment configuration changes, refer to [deployment section](/deployment).
+# Frontend
 
-1. Clone repository
+If the `NEXT_PUBLIC_FLAGS_URL` is set to a non-empty value in `.env`, you may notice that you will
+always be redirected back to `/` even if you set the `stgFlags.stage` to `open`.
+<br><br>
+To resolve this, please remove the value for `NEXT_PUBLIC_FLAGS_URL` while on `localhost`.
+{: .warning }
 
-    ```plain
-    git clone https://github.com/nushackers/hnr-frontend.git
-    ```
+## Frontend components
 
-2. Change to directory
-
-    ```plain
-    cd hnr-frontend
-    ```
-
-3. Install dependencies
-
-    ```plain
-    yarn install
-    ```
-
-4. Setup `.env`, see [environment variables section](#environment-variables)
-
-5. Set `useFlags.tsx`, `stgFlags.stage` to `open`
-
-6. Start the development server. Must use `yarn dev` as that allows all the URLs to point to
-   `localhost`
-
-    ```plain
-    yarn dev
-    ```
-
-### Frontend components
-
-#### Stack
+### Stack
 
 - React + Next.js
 - Axios for API calls
 
-#### Platform
+### Platform
 
 - Netlify
 
-#### Notable files
+### Notable files
 
 - `useFlags.tsx` is used to toggle flag state about different components of the website (separate
   flags repository to avoid redeployments)
@@ -58,22 +35,40 @@ Steps apply for locally run setup, for deployment configuration changes, refer t
 - `pages/*` is standard React pages
 - `components/*` is standard React components
 
-### Environment variables
+## Environment variables
 
-- `NEXT_PUBLIC_FIREBASE_API_KEY` - from Google console for Firebase project
-- `NEXT_PUBLIC_FIREBASE_PROJECT_ID` - project name when setting up Firebase
-- `NEXT_PUBLIC_FIREBASE_APP_ID` - from Firebase project settings (scroll down)
-- `NEXT_PUBLIC_DISCORD_CLIENT_ID` - from Discord bot
-- `NEXT_PUBLIC_DISCORD_GUILD_ID` - from Discord server (must enable Developer Mode to copy
-    link)
-- `NEXT_PUBLIC_DISCORD_LFT_CHANNEL_ID` - from Discord server
-- `NEXT_PUBLIC_API_URL` - refers to staging/prod URL, if running locally, ensure `NODE_ENV` is
-    in `development`
-- `NEXT_PUBLIC_FLAGS_URL` - used to load flags without needing to redeploy, must ask for
-    access, if running locally, no issues
-- `NEXT_PUBLIC_DISABLE_FIREBASE_AUTH`
+```bash
+# From Google console for Firebase project
+NEXT_PUBLIC_FIREBASE_API_KEY=
 
-### Important pointers for future iterations
+# Project name when setting up Firebase
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+
+# From Firebase project settings page (scroll to the bottom)
+NEXT_PUBLIC_FIREBASE_APP_ID=
+
+# From Discord bot in the Discord bot developer portal
+NEXT_PUBLIC_DISCORD_CLIENT_ID=
+
+# From Discord server (enable Developer Mode to copy link)
+NEXT_PUBLIC_DISCORD_GUILD_ID=
+
+# From Discord server (enable Developer Mode to copy link)
+NEXT_PUBLIC_DISCORD_LFT_CHANNEL_ID=
+
+# Staging/Prod API URL, uses NODE_ENV to
+# toggle to this variable or to localhost:5134 (for local)
+NEXT_PUBLIC_API_URL=
+
+# Points to flag repository to read from
+# If running locally, do not set this value, otherwise, the flags will be wrong
+NEXT_PUBLIC_FLAGS_URL=
+
+# Disables Firebase auth mode, to leave this alone
+NEXT_PUBLIC_DISABLE_FIREBASE_AUTH=
+```
+
+## Important pointers for future iterations
 
 - Must regenerate a new Firebase store
 - Must update Discord guild ID, channel ID + (potentially new Discord bot token)

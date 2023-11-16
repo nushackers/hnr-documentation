@@ -9,3 +9,13 @@ url: ""
 theme: just-the-docs
 plugins:
   - jekyll-feed
+
+enable_copy_code_button: true
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: yellow

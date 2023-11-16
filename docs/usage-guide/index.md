@@ -3,6 +3,7 @@ layout: default
 title: Usage Guide
 permalink: /usage-guide/
 has_children: true
+nav_order: 2
 ---
 
 # Usage Guide

@@ -3,20 +3,15 @@ layout: default
 title: Database
 permalink: /developer-guide/database/
 parent: Developer Guide
-nav_order: 3
+nav_order: 2
 ---
 
-Hack&Roll uses PostgreSQL for the database. Install it first and then set it up via:
+# Database
 
-1. Create new database locally with `<name>`
-2. Install .NET dependency for Entity Framework
+## ERD
 
-    ```plain
-    dotnet tool install --global dotnet-ef
-    ```
+![Database ERD](https://media.discordapp.net/attachments/908708139547918357/1156232066330009682/hnr-dev_-_public_simplified.png?ex=6565f586&is=65538086&hm=609a4f567644b78694b995c8d423080b56fe76e2fc0b4d6f8e88a921453271c2&=)
 
-3. Migrate the database to create tables
+## Stack
 
-    ```plain
-    DATABASE_URL=postgres://postgres:root@localhost:5432/<name> dotnet ef database update
-    ```
+WebApp uses PostgreSQL as the database.

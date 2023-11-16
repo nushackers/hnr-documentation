@@ -3,16 +3,13 @@ layout: default
 title: Developer Guide
 permalink: /developer-guide/
 has_children: true
+nav_order: 1
 ---
 
 # Developer Guide
 
-Get a better understanding of how the web application is structured and how to setup the project
-locally.
-{: .fs-6 .fw-300 }
-
-Before anything else, please setup Firebase and Discord so that there are no dependencies to
-previous versions of the web application.
+Before anything else, setup Firebase and Discord so that there are no dependencies to previous
+versions of the web application.
 
 ## Firebase Setup
 
