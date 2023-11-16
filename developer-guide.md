@@ -41,7 +41,9 @@ Steps apply for locally run setup, for deployment configuration changes, refer t
 
 4. Setup `.env`, see [environment variables section](#environment-variables)
 
-5. Start the development server. Must use `yarn dev` as that allows all the URLs to point to
+5. Set `useFlags.tsx`, `stgFlags.stage` to `open`
+
+6. Start the development server. Must use `yarn dev` as that allows all the URLs to point to
    `localhost`
 
     ```plain
