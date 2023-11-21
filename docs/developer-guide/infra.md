@@ -6,7 +6,7 @@ parent: Developer Guide
 nav_order: 6
 ---
 
-![](./assets/infra_overview.png)
+![](../../assets/infra_overview.png)
 
 ## Getting Started
 
