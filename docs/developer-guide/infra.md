@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Database
+title: Infrastructure
 permalink: /developer-guide/infra/
 parent: Developer Guide
 nav_order: 6
